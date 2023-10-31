@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style type="text/css">
+            
+          .square {
+           
+            margin-left: auto;
+            margin-right: auto;
+            width:50%;
+          }
+
+           
+           #diceBtn {
+          font-size: 30px;
+          
+          
+           }
+
+           #diceDiv {
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width:50%;
+            
+           }
+
+           .clear {
+            clear:both;
+
+
+           }
+           
+           
+
+           
+
+           .disappear {
+            display: none;
+           }
+
+
+          body {
+           margin:auto;
+           background-color: aquamarine;
+           text-align: center;
+          
+          }
+
+          #main {
+            background-color: beige;
+            width:200px;
+            height:250px;
+            margin: auto;
+            
+
+          }
+          #dices {
+            height:150px;
+            border: 3px black solid;
+          }
+          h1 {
+            margin:auto;
+          }
+
+            
+        </style>
+    </head>
+    <body>
+        <h1>Roll the Dice</h1>
+        <div id="main">
+            <div id="dices">
+        <div class="square disappear"  id="s1">
+            <img src="images/dice_1.png">
+        </div>
+        <div class="square disappear" id="s2">
+            <img src="images/dice_2.png">
+        </div>
+        <div class="square disappear" id="s3">
+            <img src="images/dice_3.png">
+        </div>
+
+        <div class="square disappear" id="s4">
+            <img src="images/dice_4.png">
+        </div>
+
+        <div class="square disappear" id="s5">
+            <img src="images/dice_5.png">
+        </div>
+
+        <div class="square disappear" id="s6">
+            <img src="images/dice_6.png">
+        </div>
+    </div>
+        <div class="clear"></div>
+        <div id="diceDiv"> <button id="diceBtn">Roll</button></div>
+    </div>
+       <p id="number"></p>
+        
+        <script type="text/javascript">
+            document.getElementById("diceBtn").onclick = function () {
+                var diceNumber = Math.floor(Math.random() * 6) + 1;
+                //alert(diceNumber);
+                clearDice();
+
+                switch (diceNumber) {
+                    case 1:
+                       // alert("One");
+                        document.getElementById("s1").style.display = "block";
+                        break;
+                    case 2:
+                       // alert("Two");
+                        document.getElementById("s2").style.display = "block";
+                        break;
+                    case 3:
+                        //alert("Three");
+                        document.getElementById("s3").style.display = "block";
+                        break;
+                    case 4:
+                       // alert("Four");
+                        document.getElementById("s4").style.display = "block";
+                        break;
+                    case 5:
+                        //alert("Five");
+                        document.getElementById("s5").style.display = "block";
+                        break;
+                         
+                    default:
+                       // alert("six")
+                        document.getElementById("s6").style.display = "block";
+                }
+            }
+
+            function clearDice() {
+
+                document.getElementById("s1").style.display = "none";
+                document.getElementById("s2").style.display = "none";
+                document.getElementById("s3").style.display = "none";
+                document.getElementById("s4").style.display = "none";
+                document.getElementById("s5").style.display = "none";
+                document.getElementById("s6").style.display = "none";
+            }
+                
+
+          
+        </script>
+    </body>
+</html>
