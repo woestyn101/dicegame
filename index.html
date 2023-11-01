@@ -15,11 +15,14 @@
             margin-left: auto;
             margin-right: auto;
             width:50%;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding:20px;
           }
 
            
            #diceBtn {
-          font-size: 30px;
+          font-size: 20px;
           
           
            }
@@ -57,8 +60,9 @@
           #main {
             background-color: beige;
             width:200px;
-            height:250px;
+            height:260px;
             margin: auto;
+           
             
 
           }
@@ -69,6 +73,48 @@
           h1 {
             margin:auto;
           }
+
+          hr {
+            margin:auto;
+            width:200px;
+            border: 3px solid black;
+          }
+
+          #diceBtn {
+            background-color: #20b2aa;
+            border-radius:10px;              
+            
+            
+            }
+
+
+            #diceBtn:hover {
+            background-color: aqua;
+            }
+
+            #diceBtn:active {
+                background-color: #c9ffe5;
+           }
+
+           #subMain {
+            margin:auto;
+            padding:10px;
+            
+           
+           }
+
+           #resetBtn {
+            background-color: #b22222;
+            border-radius:10px;  
+            color:white;     
+            font-size: 20px;       
+            
+            
+            }
+
+            #resetBtn:hover {
+            background-color: #ff4500;
+            }
 
             
         </style>
@@ -100,11 +146,28 @@
         </div>
     </div>
         <div class="clear"></div>
-        <div id="diceDiv"> <button id="diceBtn">Roll</button></div>
+        <div id="subMain"> <div id="diceDiv"> <button id="diceBtn">Roll</button></div><div id="diceDiv"> <p><button id="resetBtn">Reset</button></p></div>
+       
     </div>
-       <p id="number"></p>
+    <div id="stats">
+       <p>One: <span id="one"></span></p>
+       <p>Two: <span id="two"></span></p>
+       <p>Three: <span id="three"></span></p>
+       <p>Four: <span id="four"></span></p>
+       <p>Five: <span id="five"></span></p>
+       <p>Six: <span id="six"></span></p>
+       <hr>
+       <p>Total rolls: <span id="totalRolls"></span></p>
+    </div>
         
         <script type="text/javascript">
+            var one = 0;
+            var two = 0;
+            var three = 0;
+            var four = 0;
+            var five = 0;
+            var six = 0;
+            var numberRolls = 0;
             document.getElementById("diceBtn").onclick = function () {
                 var diceNumber = Math.floor(Math.random() * 6) + 1;
                 //alert(diceNumber);
@@ -114,28 +177,47 @@
                     case 1:
                        // alert("One");
                         document.getElementById("s1").style.display = "block";
+                        one++;
+                        numberRolls++;
                         break;
                     case 2:
                        // alert("Two");
                         document.getElementById("s2").style.display = "block";
+                        two++;
+                        numberRolls++;
                         break;
                     case 3:
                         //alert("Three");
                         document.getElementById("s3").style.display = "block";
+                        three++;
+                        numberRolls++;
                         break;
                     case 4:
                        // alert("Four");
                         document.getElementById("s4").style.display = "block";
+                        four++;
+                        numberRolls++;
                         break;
                     case 5:
                         //alert("Five");
                         document.getElementById("s5").style.display = "block";
+                        five++;
+                        numberRolls++;
                         break;
                          
                     default:
                        // alert("six")
                         document.getElementById("s6").style.display = "block";
+                        six++;
+                        numberRolls++;
                 }
+                document.getElementById("one").innerHTML = one;
+                document.getElementById("two").innerHTML = two;
+                document.getElementById("three").innerHTML = three;
+                document.getElementById("four").innerHTML = four;
+                document.getElementById("five").innerHTML = five;
+                document.getElementById("six").innerHTML = six;
+                document.getElementById("totalRolls").innerHTML = numberRolls;
             }
 
             function clearDice() {
@@ -147,7 +229,24 @@
                 document.getElementById("s5").style.display = "none";
                 document.getElementById("s6").style.display = "none";
             }
-                
+
+            document.getElementById("resetBtn").onclick = function () {
+            one = 0;
+            two = 0;
+            three = 0;
+            four = 0;
+            five = 0;
+            six = 0;
+            numberRolls = 0;
+                document.getElementById("one").innerHTML = one;
+                document.getElementById("two").innerHTML = two;
+                document.getElementById("three").innerHTML = three;
+                document.getElementById("four").innerHTML = four;
+                document.getElementById("five").innerHTML = five;
+                document.getElementById("six").innerHTML = six;
+                document.getElementById("totalRolls").innerHTML = numberRolls;
+
+            }  
 
           
         </script>
