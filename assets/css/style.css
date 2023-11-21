@@ -9,9 +9,7 @@
   }
 
    
-   
-
-   #diceDiv {
+    #diceDiv {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -21,14 +19,8 @@
 
    .clear {
     clear:both;
-
-
    }
    
-   
-
-   
-
    .disappear {
     display: none;
    }
